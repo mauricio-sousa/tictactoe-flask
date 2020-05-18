@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:alpine
 
 # set application default location
 EXPOSE 5000
@@ -9,10 +9,10 @@ ENV TZ=America/Sao_Paulo
 COPY . /app
 
 # upgrade system
-RUN apk --update add curl tzdata && \
+RUN apk --update add tzdata && \
     cp /usr/share/zoneinfo/$TZ /etc/localtime && \
     echo $TZ > /etc/timezone && \
     pip install --upgrade pip setuptools && \
-    pip install -r requirements.txt &&\
+    pip install -r requirements.txt
 
 ENTRYPOINT ["python","tictactoe.py"]
