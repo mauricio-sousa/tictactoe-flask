@@ -11,6 +11,6 @@ COPY . .
 RUN apk add --no-cache --update tzdata \
     && cp /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone \
-    && pip install --no-cache-dir --upgrade pip -r requirements.txt \
+    && pip install --no-cache-dir --upgrade pip -r requirements.txt
 
 ENTRYPOINT ["python","tictactoe.py"]
