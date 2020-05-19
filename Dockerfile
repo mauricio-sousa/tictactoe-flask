@@ -5,14 +5,13 @@ EXPOSE 5000
 WORKDIR /app
 ENV TZ=America/Sao_Paulo
 
-# configure pip repositories
-COPY . /app
+COPY . .
 
 # upgrade system
-RUN apk --update add tzdata && \
-    cp /usr/share/zoneinfo/$TZ /etc/localtime && \
-    echo $TZ > /etc/timezone && \
-    pip install --upgrade pip setuptools && \
-    pip install -r requirements.txt
+RUN apk add --no-cache --update tzdata \
+    && cp /usr/share/zoneinfo/$TZ /etc/localtime \
+    && echo $TZ > /etc/timezone \
+    && pip install --no-cache-dir --upgrade pip -r requirements.txt \
+    && rm -rfv /var/cache/apk/* /root/.cache
 
 ENTRYPOINT ["python","tictactoe.py"]
