@@ -15,10 +15,7 @@ python tictactoe.py
 and navigate to `http://localhost:5000`
 
 ## Minimax
-Inside [game.py](https://github.com/Buuntu/minimax-algorithm/blob/master/game.py#L31) 
-is my implementation of the 
+Implementation of the 
 [minimax](https://en.wikipedia.org/wiki/Minimax) algorithm.
 
-![Example](./static/img/example.png)
-
-
+![Example](https://raw.githubusercontent.com/mauricio-sousa/tictactoe-flask/master/static/img/example.png)
