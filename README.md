@@ -18,4 +18,4 @@ and navigate to `http://localhost:5000`
 Implementation of the 
 [minimax](https://en.wikipedia.org/wiki/Minimax) algorithm.
 
-![Example](https://raw.githubusercontent.com/mauricio-sousa/tictactoe-flask/master/static/img/example.png)
+![Example](/static/img/example.png)
