@@ -1,7 +1,0 @@
-icon: https://apps.okteto.com/movies/icon.png
-
-name: tictactoe
-image: okteto.dev/tictactoe-game:${OKTETO_GIT_COMMIT}
-command: ["python", "app.py"]
-forward:
-  - 80:5000

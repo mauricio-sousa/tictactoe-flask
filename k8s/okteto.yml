@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tictactoe-game
+spec:
+  selector:
+    matchLabels:
+      app: tictactoe-game
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tictactoe-game
+    spec:
+      containers:
+      - name: tictactoe-game
+        image: okteto.dev/tictactoe-game:${OKTETO_GIT_COMMIT}
+        ports:
+        - containerPort: 5000  
