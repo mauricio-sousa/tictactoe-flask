@@ -1,12 +1,13 @@
+name: Okteto TicTacToe Flask Game CI
+
 on: [push]
 
-name: TicTacToe Flask Game
-
 jobs:
-
   devflow:
     runs-on: ubuntu-latest
     steps:
+
+    - uses: actions/checkout@v2    
     
     - uses: okteto/context@latest
       with:
