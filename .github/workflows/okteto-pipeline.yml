@@ -24,17 +24,17 @@ jobs:
       with:
         name: mauricio-sousa
 
-    - name: Deploy preview environment
-      uses: okteto/deploy-preview@latest
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        name: staging-${{ github.event.number }}-mauricio-sousa
-        scope: personal
-        timeout: 15m        
-
-#    - name: "Trigger the pipeline"
-#      uses: okteto/pipeline@latest
+#    - name: Deploy preview environment
+#      uses: okteto/deploy-preview@latest
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #      with:
 #        name: staging-${{ github.event.number }}-mauricio-sousa
-#        timeout: 15m
+#        scope: personal
+#        timeout: 15m        
+
+    - name: "Trigger the pipeline"
+      uses: okteto/pipeline@latest
+      with:
+        name: staging-${{ github.event.number }}-mauricio-sousa
+        timeout: 15m
