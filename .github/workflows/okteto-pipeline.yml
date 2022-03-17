@@ -17,3 +17,12 @@ jobs:
       uses: okteto/build@latest
       with:
         tag: okteto.dev/tictactoe-game:${{ github.sha }}
+
+    - name: Deploy preview environment
+          uses: okteto/deploy-preview@latest
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            name: staging-${{ github.event.number }}-OKTETO_USERNAME
+            scope: personal
+            timeout: 15m        
