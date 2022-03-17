@@ -13,6 +13,11 @@ jobs:
       uses: okteto/context@latest
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
+    
+    - name: "Build"
+      uses: okteto/build@latest
+      with:
+        tag: okteto.dev/tictactoe-game:${{ github.sha }}        
 
     - name: "Activate Namespace"
       uses: okteto/namespace@latest
@@ -23,4 +28,4 @@ jobs:
       uses: okteto/pipeline@latest
       with:
         name: staging-${{ github.event.number }}-mauricio-sousa
-        timeout: 15m     
+        timeout: 15m
