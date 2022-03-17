@@ -6,13 +6,10 @@ jobs:
   devflow:
     runs-on: ubuntu-latest
     steps:
-
     - uses: actions/checkout@v2    
-    
     - uses: okteto/context@latest
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
-    
     - name: "Build"
       uses: okteto/build@latest
       with:
@@ -23,6 +20,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: staging-${{ github.event.number }}-OKTETO_USERNAME
+        name: staging-${{ github.event.number }}-mauricio-sousa
         scope: personal
-        timeout: 15m        
+        timeout: 15m
