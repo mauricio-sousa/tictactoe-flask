@@ -31,13 +31,12 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: staging-${{ github.event.number }}-mauricio-sousa
+        name: pr-${{ github.event.number }}-mauricio-sousa
         scope: personal
-        timeout: 15m   
-        build: true     
+        timeout: 15m    
 
     - name: "Trigger the pipeline"
       uses: okteto/pipeline@latest
       with:
         name: staging-${{ github.event.number }}-mauricio-sousa
-        timeout: 15m
+        timeout: 15m   
