@@ -17,7 +17,8 @@ jobs:
     - name: "Build"
       uses: okteto/build@latest
       with:
-        tag: okteto.dev/tictactoe-game:${{ github.sha }}        
+        tag: okteto.dev/tictactoe-game:latest   
+        tag: okteto.dev/tictactoe-game:${{ github.sha }}     
 
     - name: "Activate Namespace"
       uses: okteto/namespace@latest
