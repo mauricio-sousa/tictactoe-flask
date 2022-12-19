@@ -1,0 +1,50 @@
+name: Production Deployment
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: 
+      name: production    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2  
+
+    - name: Set context to Okteto Cloud
+      uses: okteto/context@latest
+      with:
+        token: ${{ secrets.OKTETO_TOKEN }}
+    
+    - name: Build and deploy application container to Okteto Flask Namespace
+      uses: okteto/deploy-stack@latest
+      with:
+        name: tictactoe-flask
+        build: true
+
+
+name: Preview Deployment
+
+on: [pull_request]
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    environment: 
+      name: preview       
+    steps:
+    - name: checkout
+      uses: actions/checkout@master
+
+    - name: Set context to Okteto Cloud
+      uses: okteto/context@latest
+      with:
+        token: ${{ secrets.OKTETO_TOKEN }}
+
+    - name: Deploy your preview environment
+      uses: okteto/deploy-preview@latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        name: pr-${{ github.event.number }}-mauricio-sousa
+        scope: personal
+        timeout: 15m         

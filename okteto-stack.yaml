@@ -1,0 +1,9 @@
+services:
+  tictactoe-flask:
+    public: true
+    build: .
+    scale: 1
+    ports:
+      - 5000    
+    labels:
+      app: tictactoe-flask
