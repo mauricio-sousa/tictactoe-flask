@@ -16,7 +16,3 @@ jobs:
 
     - name: Deploy your preview environment
       uses: okteto/deploy-preview@latest
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        name: pr-${{ github.event.number }}-tictactoe
