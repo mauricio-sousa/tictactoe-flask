@@ -21,4 +21,4 @@ jobs:
     - name: Destroy preview environment
       uses: okteto/destroy-preview@latest
       with:
-        name: pr-${{ github.event.number }}-mauricio-sousa
+        name: dev-mauricio-sousa
