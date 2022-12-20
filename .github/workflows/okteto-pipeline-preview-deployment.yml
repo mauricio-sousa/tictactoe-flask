@@ -1,4 +1,4 @@
-name: Preview Deployment
+name: Okteto Preview Deployment
 
 on: [pull_request]
 

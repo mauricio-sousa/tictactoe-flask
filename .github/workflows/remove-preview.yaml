@@ -1,4 +1,6 @@
 # preview-closed.yaml
+name: Destroy Okteto preview environment
+
 on: 
   pull_request: 
     types:
