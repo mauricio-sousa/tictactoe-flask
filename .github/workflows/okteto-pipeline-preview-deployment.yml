@@ -17,4 +17,4 @@ jobs:
     - name: Deploy your preview environment
       uses: okteto/deploy-preview@latest
       with:
-        name: dev-previews-mauriciosousa
+        name: dev-mauricio-sousa
